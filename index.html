@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube 1996</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header, footer {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+        }
+
+        section {
+            margin: 20px;
+            text-align: center;
+        }
+
+        video {
+            width: 320px;
+            height: 240px;
+        }
+
+        .video-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .video-list li {
+            list-style: none;
+            margin: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to YouTube 1996</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Upload Video</a>
+        <a href="#">Popular Videos</a>
+    </nav>
+
+    <section>
+        <h2>Featured Videos</h2>
+        <div class="video-list">
+            <li>
+                <h3>Video 1</h3>
+                <!-- Player for RealVideo (RM) -->
+                <object data="video1.rm" type="audio/x-pn-realaudio" width="320" height="240">
+                    <param name="autoplay" value="true">
+                    <param name="loop" value="false">
+                </object>
+            </li>
+            <li>
+                <h3>Video 2</h3>
+                <!-- Player for QuickTime -->
+                <object data="video2.mov" type="video/quicktime" width="320" height="240">
+                    <param name="autoplay" value="true">
+                    <param name="loop" value="false">
+                </object>
+            </li>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 1996 YouTube</p>
+    </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube 1996</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header, footer {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+        }
+
+        section {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .video-list {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+
+        object {
+            width: 320px;
+            height: 240px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to YouTube 1996</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Upload Video</a>
+        <a href="#">Popular Videos</a>
+    </nav>
+
+    <section>
+        <h2>Featured Videos</h2>
+        <div class="video-list">
+            <h3>Video 1 (RealVideo)</h3>
+            <!-- Player for RealVideo (RM) -->
+            <object data="video1.rm" type="audio/x-pn-realaudio" width="320" height="240">
+                <param name="autoplay" value="true">
+                <param name="loop" value="false">
+            </object>
+        </div>
+        <div class="video-list">
+            <h3>Video 2 (QuickTime)</h3>
+            <!-- Player for QuickTime (MOV) -->
+            <object data="video2.mov" type="video/quicktime" width="320" height="240">
+                <param name="autoplay" value="true">
+                <param name="loop" value="false">
+            </object>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 1996 YouTube</p>
+    </footer>
+</body>
+</html>
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    .video-list {
+        display: block;
+        text-align: center;
+    }
+<video width="320" height="240" controls>
+    <source src="video1.mp4" type="video/mp4">
+    <source src="video1.webm" type="video/webm">
+    Your browser does not support the video tag.
+</video>
+}
