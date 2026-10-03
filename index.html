@@ -1,187 +1,83 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <title>YouTube 1996</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header, footer {
-            text-align: center;
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-        }
-
-        nav {
-            background-color: #444;
-            padding: 10px;
-        }
-
-        nav a {
-            color: white;
-            margin: 10px;
-            text-decoration: none;
-        }
-
-        section {
-            margin: 20px;
-            text-align: center;
-        }
-
-        video {
-            width: 320px;
-            height: 240px;
-        }
-
-        .video-list {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .video-list li {
-            list-style: none;
-            margin: 10px;
-            text-align: center;
-        }
-    </style>
-</head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YouTube 1996</title>
+<style>
+body{margin:0;background:#d6d6d6;color:#111;font:14px Arial}a{color:#00e}
+header{background:#eee;border-bottom:2px solid #555;padding:10px}.head{max-width:1000px;margin:auto}
+.logo{font:bold 34px Georgia;letter-spacing:-2px}.logo b{color:#900}
+nav{background:#039;border-bottom:3px solid #001a55}.nav{max-width:1000px;margin:auto}
+nav button{background:none;border:0;border-right:1px solid #6688cc;color:white;padding:8px 13px;font-weight:bold;cursor:pointer}
+nav button:hover,nav button.active{background:#36c}
+main{max-width:1000px;margin:12px auto;padding:0 8px}.bar,.panel{background:#eee;border:1px solid #666;box-shadow:inset 1px 1px #fff}
+.bar{padding:8px;display:flex;gap:6px}.bar input{flex:1;padding:6px;border:1px solid #777}
+button.classic{background:#ddd;border:2px outset #fff;padding:4px 10px;cursor:pointer}
+.notice{margin:10px 0;padding:8px;background:#fffbd6;border:1px solid #a80}
+.grid{display:grid;grid-template-columns:1fr 260px;gap:10px}.panel{margin-bottom:10px}.panel h2,.panel h3{margin:0;padding:6px 8px;background:#039;color:#fff;font-size:15px}.body{padding:9px}
+.videos{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.card{background:#fff;border:1px solid #888;padding:6px;cursor:pointer}.card:hover{border-color:#039}
+.thumb{aspect-ratio:4/3;background:repeating-linear-gradient(45deg,#222 0 8px,#555 8px 16px);display:grid;place-items:center;color:#fff;text-align:center;font:18px Georgia}
+.card h3{margin:6px 0 3px;font-size:14px}.meta{font-size:11px;color:#555}
+.watch{display:grid;grid-template-columns:1fr 250px;gap:10px}.player{aspect-ratio:4/3;background:#111;border:3px inset #aaa;color:#fff;display:grid;place-items:center;text-align:center;padding:12px}
+.title{font:23px Georgia;margin:9px 0 3px}.comment{background:#fff;border:1px solid #aaa;padding:7px;margin:7px 0}
+.form{margin:8px 0}.form label{display:block;font-weight:bold}.form input,.form textarea{width:100%;padding:6px;box-sizing:border-box;border:1px solid #777}
+.hidden{display:none!important}.empty{text-align:center;padding:20px;color:#555}footer{text-align:center;color:#555;font-size:11px;padding:15px}
+@media(max-width:720px){.grid,.watch{grid-template-columns:1fr}.videos{grid-template-columns:1fr}.logo{font-size:28px}}
+</style></head>
 <body>
-    <header>
-        <h1>Welcome to YouTube 1996</h1>
-    </header>
+<header><div class="head"><div class="logo">You<b>Tube</b> 1996</div><small>The Internet Video Network · Est. 1996</small></div></header>
+<nav><div class="nav"><button class="active" data-page="home">Home</button><button data-page="popular">Popular</button><button data-page="upload">Upload Video</button><button data-page="about">About</button></div></nav>
+<main>
+<div class="bar"><input id="q" placeholder="Search videos..."><button class="classic" id="search">Search</button><button class="classic" id="random">Random Video</button></div>
+<div class="notice"><b>Welcome!</b> Nova versão do protótipo, com aparência de web de 1996 e funções modernas para teste.</div>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Upload Video</a>
-        <a href="#">Popular Videos</a>
-    </nav>
+<section id="home"><div class="grid"><div class="panel"><h2>Featured Videos</h2><div class="body"><div id="list" class="videos"></div></div></div>
+<aside><div class="panel"><h3>Site Statistics</h3><div class="body">Videos: <b id="count"></b><br>Members: <b>1,996</b><br>Visitors: <b id="vis"></b></div></div>
+<div class="panel"><h3>Categories</h3><div class="body">Computers<br>Music<br>Games<br>News<br>Science<br>Personal</div></div></aside></div></section>
 
-    <section>
-        <h2>Featured Videos</h2>
-        <div class="video-list">
-            <li>
-                <h3>Video 1</h3>
-                <!-- Player for RealVideo (RM) -->
-                <object data="video1.rm" type="audio/x-pn-realaudio" width="320" height="240">
-                    <param name="autoplay" value="true">
-                    <param name="loop" value="false">
-                </object>
-            </li>
-            <li>
-                <h3>Video 2</h3>
-                <!-- Player for QuickTime -->
-                <object data="video2.mov" type="video/quicktime" width="320" height="240">
-                    <param name="autoplay" value="true">
-                    <param name="loop" value="false">
-                </object>
-            </li>
-        </div>
-    </section>
+<section id="popular" class="hidden"><div class="panel"><h2>Popular Videos</h2><div class="body"><div id="popularList" class="videos"></div></div></div></section>
 
-    <footer>
-        <p>&copy; 1996 YouTube</p>
-    </footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>YouTube 1996</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+<section id="watch" class="hidden"><div class="panel"><h2>Now Playing</h2><div class="body"><div class="watch"><div>
+<div id="player" class="player">VIDEO PLAYER</div><div id="wt" class="title"></div><div id="wm" class="meta"></div><p id="wd"></p></div>
+<div class="panel"><h3>Video Information</h3><div class="body" id="wi"></div></div></div>
+<div class="panel" style="margin-top:10px"><h3>Comments</h3><div class="body"><div id="comments"></div>
+<div class="form"><label>Name</label><input id="cn"></div><div class="form"><label>Comment</label><textarea id="ct" rows="3"></textarea></div><button class="classic" id="comment">Post Comment</button></div></div>
+</div></div></section>
 
-        header, footer {
-            text-align: center;
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-        }
+<section id="upload" class="hidden"><div class="panel"><h2>Upload Video</h2><div class="body">
+<p><b>Prototype:</b> uploads are registered locally in this browser. A real public service needs a backend and storage.</p>
+<div class="form"><label>Title</label><input id="ut"></div><div class="form"><label>Author</label><input id="ua"></div><div class="form"><label>Description</label><textarea id="ud" rows="5"></textarea></div>
+<div class="form"><label>Video file</label><input id="uf" type="file" accept="video/*"></div><button class="classic" id="upload">Upload to Prototype</button><p id="status"></p>
+</div></div></section>
 
-        nav {
-            background-color: #444;
-            padding: 10px;
-        }
+<section id="about" class="hidden"><div class="panel"><h2>About YouTube 1996</h2><div class="body">
+<p>Uma experiência de história alternativa: e se uma rede pública de vídeos tivesse surgido na Web em 1996?</p>
+<p>A interface usa elementos inspirados na web daquela época: navegação compacta, bordas, tipografia serifada e informação densa.</p>
+<p>Esta versão transforma o experimento original em um protótipo funcional de front-end: busca, populares, páginas de vídeo, comentários e upload local.</p>
+</div></div></section>
+</main><footer>YouTube 1996 Prototype · Independent retro-web experiment · <span id="year"></span></footer>
 
-        nav a {
-            color: white;
-            margin: 10px;
-            text-decoration: none;
-        }
-
-        section {
-            margin: 20px;
-            text-align: center;
-        }
-
-        .video-list {
-            display: inline-block;
-            margin: 10px;
-            text-align: center;
-        }
-
-        object {
-            width: 320px;
-            height: 240px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Welcome to YouTube 1996</h1>
-    </header>
-
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Upload Video</a>
-        <a href="#">Popular Videos</a>
-    </nav>
-
-    <section>
-        <h2>Featured Videos</h2>
-        <div class="video-list">
-            <h3>Video 1 (RealVideo)</h3>
-            <!-- Player for RealVideo (RM) -->
-            <object data="video1.rm" type="audio/x-pn-realaudio" width="320" height="240">
-                <param name="autoplay" value="true">
-                <param name="loop" value="false">
-            </object>
-        </div>
-        <div class="video-list">
-            <h3>Video 2 (QuickTime)</h3>
-            <!-- Player for QuickTime (MOV) -->
-            <object data="video2.mov" type="video/quicktime" width="320" height="240">
-                <param name="autoplay" value="true">
-                <param name="loop" value="false">
-            </object>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 1996 YouTube</p>
-    </footer>
-</body>
-</html>
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-    .video-list {
-        display: block;
-        text-align: center;
-    }
-<video width="320" height="240" controls>
-    <source src="video1.mp4" type="video/mp4">
-    <source src="video1.webm" type="video/webm">
-    Your browser does not support the video tag.
-</video>
-}
+<script>
+const base=[
+{id:1,t:"Welcome to the Internet",a:"Webmaster",c:"Computers",v:12840,d:"Oct 03, 1996",x:"A short tour of the exciting new World Wide Web.",m:["NetSurfer: Great little tour!"]},
+{id:2,t:"My First Computer",a:"Ivo",c:"Computers",v:9340,d:"Sep 21, 1996",x:"Showing a home computer setup and classic software.",m:["DOSFan: Very cool machine."]},
+{id:3,t:"Weekend Game Session",a:"RetroPlayer",c:"Games",v:7655,d:"Sep 14, 1996",x:"A recording from a weekend of classic computer gaming.",m:[]},
+{id:4,t:"Music From My Room",a:"RadioKid",c:"Music",v:6210,d:"Aug 30, 1996",x:"A homemade music video recorded with a consumer camcorder.",m:["FM96: Nice recording!"]}
+];
+let data;try{data=JSON.parse(localStorage.yt96)||base}catch(e){data=base}
+let current=null;
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function save(){localStorage.yt96=JSON.stringify(data)}
+function card(v){return `<article class="card" onclick="openVideo(${v.id})"><div class="thumb">${esc(v.t)}</div><h3>${esc(v.t)}</h3><div class="meta">${esc(v.a)} · ${v.v.toLocaleString("pt-BR")} views</div><div class="meta">${esc(v.c)} · ${esc(v.d)}</div></article>`}
+function render(list=data){document.querySelector("#list").innerHTML=list.length?list.map(card).join(""):'<div class="empty">No videos found.</div>';document.querySelector("#count").textContent=data.length}
+function page(n){["home","popular","watch","upload","about"].forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==n));document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===n))}
+function openVideo(id){let v=data.find(x=>x.id===id);if(!v)return;current=id;v.v++;save();document.getElementById("player").innerHTML=`<div><b style="font:24px Georgia">${esc(v.t)}</b><br><br>[ VIDEO PLAYER ]<br><small>Área preparada para MP4/WebM ou um player histórico.</small></div>`;document.getElementById("wt").textContent=v.t;document.getElementById("wm").textContent=`${v.a} · ${v.v.toLocaleString("pt-BR")} views · ${v.d}`;document.getElementById("wd").textContent=v.x;document.getElementById("wi").innerHTML=`<b>Category:</b> ${esc(v.c)}<br><br><b>Author:</b> ${esc(v.a)}<br><br><b>Video ID:</b> ${v.id}`;comments(v);page("watch")}
+function comments(v){document.getElementById("comments").innerHTML=v.m.length?v.m.map(z=>`<div class="comment">${esc(z)}</div>`).join(""):'<div class="empty">No comments yet.</div>'}
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{page(b.dataset.page);if(b.dataset.page==="home")render();if(b.dataset.page==="popular")document.querySelector("#popularList").innerHTML=[...data].sort((a,b)=>b.v-a.v).map(card).join("")});
+document.getElementById("search").onclick=()=>{let q=document.getElementById("q").value.toLowerCase();page("home");render(q?data.filter(v=>(v.t+" "+v.a+" "+v.c+" "+v.x).toLowerCase().includes(q)):data)};
+document.getElementById("q").onkeydown=e=>{if(e.key==="Enter")document.getElementById("search").click()};
+document.getElementById("random").onclick=()=>openVideo(data[Math.floor(Math.random()*data.length)].id);
+document.getElementById("comment").onclick=()=>{let t=document.getElementById("ct").value.trim();if(!t||current==null)return;let v=data.find(x=>x.id===current);v.m.push((document.getElementById("cn").value.trim()||"Anonymous")+": "+t);save();document.getElementById("ct").value="";comments(v)};
+document.getElementById("upload").onclick=()=>{let t=document.getElementById("ut").value.trim();if(!t){document.getElementById("status").textContent="Enter a title.";return}let f=document.getElementById("uf").files[0];let v={id:Date.now(),t,a:document.getElementById("ua").value.trim()||"Anonymous",c:"Personal",v:0,d:new Date().toLocaleDateString("en-US"),x:document.getElementById("ud").value.trim()||(f?"Local file: "+f.name:"Prototype upload."),m:[]};data.push(v);save();render();document.getElementById("status").textContent="Upload registrado localmente. ID: "+v.id};
+let n=+(localStorage.yt96vis||0)+1;localStorage.yt96vis=n;document.getElementById("vis").textContent=String(n).padStart(6,"0");document.getElementById("year").textContent=new Date().getFullYear();render();
+</script></body></html>
